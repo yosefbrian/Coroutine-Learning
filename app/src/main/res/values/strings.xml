@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Coroutine-parallel</string>
+    <string name="reload">reload</string>
+</resources>
