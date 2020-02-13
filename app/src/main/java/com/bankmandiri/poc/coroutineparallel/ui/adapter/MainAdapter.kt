@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.rv_layout.view.*
 
 class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
-    val data: ArrayList<ActivityResponse> = ArrayList()
+    private val data: ArrayList<ActivityResponse> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rv_layout, parent, false)

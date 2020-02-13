@@ -2,6 +2,8 @@ package com.bankmandiri.poc.coroutineparallel.services
 
 import com.bankmandiri.poc.coroutineparallel.model.ActivityResponse
 import com.bankmandiri.poc.coroutineparallel.model.AuthorsResponse
+import com.bankmandiri.poc.coroutineparallel.utils.Result
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 
 interface DummyService {
@@ -17,5 +19,4 @@ interface DummyService {
 
     @GET("api/Activities/1")
     suspend fun getBook(): ActivityResponse
-
 }

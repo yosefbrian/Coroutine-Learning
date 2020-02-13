@@ -8,118 +8,92 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/activityProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvActivity"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:orientation="horizontal"
         />
+
+            <Button
+                android:id="@+id/activityRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:layout_below="@id/rvActivity"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/authorProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAuthor"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:orientation="horizontal"
         />
+
+            <Button
+                android:id="@+id/authorRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:layout_below="@id/rvAuthor"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/bookProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBook"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:orientation="horizontal"
         />
 
-
-
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="200dp"
-        android:layout_margin="10dp">
-
-        <ProgressBar
-            android:id="@+id/progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/cardView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello"
-            android:visibility="gone"
-            />
-        
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/reload"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="@string/reload"
-            />
-    </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="200dp"
-            android:layout_margin="10dp">
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:text="@string/reload"
-                />
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="200dp"
-            android:layout_margin="10dp"
-            >
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:text="@string/reload"
-                />
-        </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/bookRetry"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="200dp"
-                android:layout_margin="10dp"
-                >
+                android:text="Retry"
+                android:layout_below="@id/rvBook"
+                android:layout_centerHorizontal="true"
+                />
 
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:text="@string/reload"
-                    />
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-
-    </HorizontalScrollView>
-
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>

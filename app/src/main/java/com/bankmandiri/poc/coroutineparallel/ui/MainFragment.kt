@@ -55,39 +55,50 @@ class MainFragment : Fragment() {
         rvBook.adapter = bookAdapter
 
         initObserver()
-        initReloadClick()
-        viewModel.getActivities()
-        viewModel.getAuthors()
-        viewModel.getBooks()
-        viewModel.getBook()
+        initRefreshButton()
+        viewModel.getActivitiesAsync()
+        viewModel.getAuthorsAsync()
+        viewModel.getBooksAsync()
+    }
+
+    private fun initRefreshButton(){
+        activityRetry.setOnClickListener {
+            rvActivity.visibility = View.INVISIBLE
+            activityProgress.visibility = View.VISIBLE
+            viewModel.getActivitiesAsync()
+        }
+
+        authorRetry.setOnClickListener {
+            rvAuthor.visibility = View.INVISIBLE
+            authorProgress.visibility = View.VISIBLE
+            viewModel.getAuthorsAsync()
+        }
+
+        bookRetry.setOnClickListener {
+            rvBook.visibility = View.INVISIBLE
+            bookProgress.visibility = View.VISIBLE
+            viewModel.getBooksAsync()
+        }
     }
 
     private fun initObserver(){
         viewModel.activityData.observe(viewLifecycleOwner, Observer {
             activitiyAdapter.updateData(it)
+            rvActivity.visibility = View.VISIBLE
+             activityProgress.visibility = View.GONE
         })
 
         viewModel.authorData.observe(viewLifecycleOwner, Observer {
             authorAdapter.updateData(it)
+            rvAuthor.visibility = View.VISIBLE
+            authorProgress.visibility = View.GONE
         })
 
         viewModel.bookData.observe(viewLifecycleOwner, Observer {
             bookAdapter.updateData(it)
-        })
-
-        viewModel.book.observe(viewLifecycleOwner, Observer {
-            if (it.title.isNotEmpty()) {
-                progress.visibility = View.GONE
-                cardView1.visibility = View.VISIBLE
-                cardView1.text = it.title
-            }
+            rvBook.visibility = View.VISIBLE
+            bookProgress.visibility = View.GONE
         })
     }
 
-
-    private fun initReloadClick(){
-        reload.setOnClickListener {
-            viewModel.getBook()
-        }
-    }
 }

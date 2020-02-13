@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.rv_layout.view.*
 
 class AuthorAdapter: RecyclerView.Adapter<AuthorAdapter.ViewHolder>() {
 
-    val data: ArrayList<AuthorsResponse> = ArrayList()
+    private val data: ArrayList<AuthorsResponse> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rv_layout, parent, false)
